@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+import os, sys
+
+path = "."
+if len(sys.argv) > 1:
+    path = sys.argv[1]
+
+for dirname, dirnames, filenames in os.walk(path):
+    # print path to all subdirectories first.
+    for subdirname in dirnames:
+        print("-I" + os.path.join(dirname, subdirname))
